@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cakeshop
+  labels:
+    app: cakeshop
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: cakeshop
+  template:
+    metadata:
+      labels:
+        app: cakeshop
+    spec:
+      containers:
+      - name: cakeshop
+        image: girishts7/myweb
+        ports:
+        - containerPort: 80
